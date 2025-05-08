@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MFA Go App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+<body>
+    <div class="container mt-5" style="margin-bottom: 48px;">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h2>Register</h2>
+                    </div>
+                    <div class="card-body">
+                        <form id="registerForm">
+                            <div class="mb-3">
+                                <label for="reg-username" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="reg-username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="reg-password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="reg-password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Register</button>
+                            <div id="registerFeedback" class="mt-3"></div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header bg-primary text-white">
+                        <h2>Login</h2>
+                    </div>
+                    <div class="card-body">
+                        <form id="loginForm">
+                            <div class="mb-3">
+                                <label for="login-username" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="login-username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="login-password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="login-password" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="totp-code" class="form-label">TOTP Code</label>
+                                <input type="text" class="form-control" id="totp-code" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                            <div id="loginFeedback" class="mt-3"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div id="qrCard" class="card" style="display:none;">
+                    <div class="card-header bg-success text-white">
+                        <h2>MFA Setup</h2>
+                    </div>
+                    <div class="card-body text-center">
+                        <img id="qrImage" class="img-fluid mb-3" style="max-width: 200px;">
+                        <div id="totpSecret" class="alert alert-secondary"></div>
+                        <a id="downloadQr" href="#" class="btn btn-success">Download QR Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/static/js/scripts.js"></script>
+</body>
+
+</html>
